@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/core/components/Button';
 
 /**
@@ -16,6 +17,8 @@ import { Button } from '@/core/components/Button';
  * the TODO list application features.
  */
 export const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="space-y-8">
       <div className="text-center">
@@ -62,8 +65,8 @@ export const HomePage = () => {
       </div>
 
       <div className="text-center">
-        <Button variant="primary" size="lg">
-          Começar Agora
+        <Button variant="primary" size="lg" onClick={() => navigate('/tasks/create')}>
+          Criar Nova Tarefa
         </Button>
       </div>
     </div>

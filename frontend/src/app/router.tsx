@@ -5,6 +5,7 @@ import { RootLayout } from '@/pages/layouts/RootLayout';
 
 // Lazy loading of pages for code splitting
 const HomePage = lazy(() => import('@/pages/Home'));
+const TaskCreatePage = lazy(() => import('@/pages/TaskCreate'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 /**
@@ -30,6 +31,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <HomePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'tasks/create',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <TaskCreatePage />
           </Suspense>
         ),
       },
